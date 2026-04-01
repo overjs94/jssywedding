@@ -273,11 +273,15 @@ function App() {
   const shareUrl = 'https://overjs94.github.io/jssywedding/'
   const imageUrl = 'https://overjs94.github.io/jssywedding/kakao-share.jpg'
 
+  if (!window.Kakao.isInitialized()) {
+    window.Kakao.init('f5b77682cbcf78db381a09b926bed7bb')
+  }
+
   window.Kakao.Share.sendDefault({
     objectType: 'feed',
     content: {
       title: '정섭 🤍 소연 결혼합니다',
-      description: '2026.06.20\n15시 00분 서울대학교 교수회관',
+      description: '2026.06.20 15시 00분 서울대학교 교수회관',
       imageUrl,
       link: {
         mobileWebUrl: shareUrl,
