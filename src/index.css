@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Noto Serif KR', 'Noto Sans KR', serif;
+  background: #f5f1eb;
+  color: #312b28;
+  overflow-x: hidden;
+}
