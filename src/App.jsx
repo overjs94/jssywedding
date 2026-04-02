@@ -270,35 +270,50 @@ function App() {
     return
   }
 
-  const shareUrl = 'https://overjs94.github.io/jssywedding/'
-  const imageUrl = 'https://overjs94.github.io/jssywedding/kakao-share.jpg'
-
   if (!window.Kakao.isInitialized()) {
     window.Kakao.init('f5b77682cbcf78db381a09b926bed7bb')
   }
 
-  window.Kakao.Share.sendDefault({
-    objectType: 'feed',
-    content: {
-      title: '정섭 🤍 소연 결혼합니다',
-      description: '2026.06.20 15시 00분 서울대학교 교수회관',
-      imageUrl,
-      link: {
-        mobileWebUrl: shareUrl,
-        webUrl: shareUrl,
-      },
-    },
-    buttons: [
-      {
-        title: '청첩장 보기',
-        link: {
-          mobileWebUrl: shareUrl,
-          webUrl: shareUrl,
-        },
-      },
-    ],
+  window.Kakao.Share.sendCustom({
+    templateId: 131630,
   })
 }
+
+//   const shareKakao = () => {
+//   if (!window.Kakao) {
+//     alert('카카오 SDK가 로드되지 않았습니다.')
+//     return
+//   }
+
+//   const shareUrl = 'https://overjs94.github.io/jssywedding/'
+//   const imageUrl = 'https://overjs94.github.io/jssywedding/kakao-share.jpg'
+
+//   if (!window.Kakao.isInitialized()) {
+//     window.Kakao.init('f5b77682cbcf78db381a09b926bed7bb')
+//   }
+
+//   window.Kakao.Share.sendDefault({
+//     objectType: 'feed',
+//     content: {
+//       title: '정섭 🤍 소연 결혼합니다',
+//       description: '2026.06.20 15시 00분 서울대학교 교수회관',
+//       imageUrl,
+//       link: {
+//         mobileWebUrl: shareUrl,
+//         webUrl: shareUrl,
+//       },
+//     },
+//     buttons: [
+//       {
+//         title: '청첩장 보기',
+//         link: {
+//           mobileWebUrl: shareUrl,
+//           webUrl: shareUrl,
+//         },
+//       },
+//     ],
+//   })
+// }
 
   const getPrevIndex = (index) =>
     index === null ? 0 : (index - 1 + galleryImages.length) % galleryImages.length
