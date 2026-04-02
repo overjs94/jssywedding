@@ -511,7 +511,9 @@ function App() {
                     key={`${actualIndex}-${index}`}
                     onClick={() => openImage(actualIndex)}
                   >
-                    <img src={image} alt={`gallery-${actualIndex + 1}`} />
+                    {/* <img src={image} alt={`gallery-${actualIndex + 1}`} /> */}
+                    <img src={image} alt={`gallery-${actualIndex + 1}`} loading="lazy" />
+
                   </button>
                 )
               })}
